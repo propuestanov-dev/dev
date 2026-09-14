@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una carta para ti </title>
+    <link rel="stylesheet" href="mainMensaje.css">
+    <!-- Fuente elegante estilo manuscrita para el título -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-carta">
+
+    <div class="contenedor-principal">
+        <!-- El Sobre Inicial -->
+        <div class="sobre-imagen" id="sobre" onclick="abrirCarta()">
+            <div class="hoja-detras"></div>
+            <div class="cuerpo-sobre-img">
+                <div class="sello-corazon">❤️</div>
+                <div class="lineas-sobre"></div>
+                <p class="vista-previa">Mi Querida...</p>
+            </div>
+            <p class="instruccion-abrir">Toca el sobre para abrir la carta</p>
+        </div>
+
+        <!-- La Carta Desplegada (Aparece al abrir) -->
+        <div class="carta-pantalla" id="carta">
+            <div class="encabezado-carta">
+                <h2>Esta carta es para decirte algo muy importante...</h2>
+            </div>
+            
+            <div class="texto-carta">
+                <p>
+                    Con el tiempo que llevamos conociéndonos me he dado cuenta que, en verdad me gustas no sé cómo explicarlo pero desde que llegaste a mi vida todo es tan tranquilo y se siente tan bien, me enamoré de ti porque sentí cosas que ninguna otra persona me había hecho sentir, me encanta tu personalidad tu forma única de ser y lo firme que eres a tus principios y siempre mantienes todo lo que dices.
+                </p>
+                <p>
+                    Me encantan tus ojos, me encantan tus cachetitos y tu hermosa sonrisa jamás me cansaría de verte sonreír y por favor nunca dejes de hacerlo, yo me comprometo hacerte sonreír con mis locuras ya que eres la única persona que las entiende, quiero decirte que disfruto mucho estar contigo cada segundo cada minuto, cada hora y cada día que comparto y convivo contigo y no me voy a cansar de compartir todo esto contigo.
+                </p>
+                <p>
+                    Tú flaca eres una obra de arte en movimiento, todo de ti es completamente perfecto. Pero más allá de lo físico lo que más me enamora de ti es la forma en que me tratas, es esa chispa que tú tienes esa luz que ilumina todo mi mundo esa bondad inquebrantable que hace que brilles más tal vez tú no lo veas así pero para mí eres una mujer hermosa.
+                </p>
+                <p>
+                    Tu cuerpo es un templo sagrado que merece ser honrado y celebrado con toda su grandeza. Cada curva, cada marca, cada línea y cada cicatriz cuenta una historia única y la increíble persona que eres. Y aunque pueden haber momentos que te sientas insegura quiero que sepas que en mis ojos siempre serás perfecta, porque eres la personificación misma de la belleza en su forma más pura y auténtica.
+                </p>
+                <p>
+                    No permitas que las voces críticas ya sean internas o externas te hagan dudar de lo que eres, mereces amor y aceptación incondicionalmente de ti misma <strong>YO PROMETO ESTAR A TU LADO RECORDANDO LO HERMOSA, VALIOSA Y EXTRAORDINARIA QUE ERES CADA DÍA.</strong>
+                </p>
+                <p>
+                    Sé que hace tiempo hablamos sobre el futuro y que lo debíamos oficializar y muchas veces me has preguntado si en verdad quiero algo serio ya hace tiempo quería decirte todo esto pero hoy es el momento ya que quería hacerte algo especial y hecho con mucho amor que no queden en solo palabras que se dicen y quedan sino algo que puedas guardar y volver a ver cuando quieras. Por eso me tomé el tiempo de hacer esto. Este año fue demasiado importante para mí, no solo por lo que vivimos sino porque lo viví contigo. Y de alguna manera quería que se viera reflejado acá.
+                </p>
+                <p class="final-carta">
+                    No es solo una carta sino una forma de mostrarte cuánto <strong>TE AMO</strong>. ❤️
+                </p>
+            </div>
+
+            <div class="pie-carta">
+                <a href="propuesta.html" class="btn-siguiente">Continuar ❤️</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirCarta() {
+            var sobre = document.getElementById('sobre');
+            var carta = document.getElementById('carta');
+            
+            // Oculta el sobre y muestra la carta con transición
+            sobre.classList.add('oculto');
+            setTimeout(function() {
+                sobre.style.display = 'none';
+                carta.classList.add('visible');
+            }, 400);
+        }
+    </script>
+</body>
+</html>

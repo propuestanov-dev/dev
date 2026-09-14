@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quires ...</title>
+    <!-- Importamos la fuente elegante manuscrita -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mainPropuesta.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function moverBoton() {
+            var btnNo = $('.p1');
+            var anchoPantalla = $(window).width() - btnNo.outerWidth();
+            var altoPantalla = $(window).height() - btnNo.outerHeight();
+
+            var arriba = Math.floor(Math.random() * (altoPantalla - 20)) + 10;
+            var izquierda = Math.floor(Math.random() * (anchoPantalla - 20)) + 10;
+
+            btnNo.css({
+                'position': 'fixed',
+                'top': arriba + 'px',
+                'left': izquierda + 'px'
+            });
+        }
+
+        $(document).ready(function(){
+            if (localStorage.getItem('fechaAceptacion')) {
+                window.location.href = "contador.html";
+            }
+
+            $('.p1').on('mouseover touchstart', function(e){
+                e.preventDefault();
+                moverBoton();
+            });
+        });
+
+        function dijoSi(){
+            if (!localStorage.getItem('fechaAceptacion')) {
+                var fechaInicio = new Date().getTime();
+                localStorage.setItem('fechaAceptacion', fechaInicio);
+            }
+            window.location.href = "contador.html";
+        }
+    </script>
+</head>
+<body class="pagina-propuesta">
+    <div class="contenedor-propuesta">
+        <div class="titulo-propuesta">
+            <h1>¿Quieres ser mi novia?</h1>
+        </div>
+        <div class="opciones">
+            <button class="btn p1">No</button>
+            <button onclick="dijoSi()" class="btn p2">Sí</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Fondo principal en negro */
+body.pagina-inicio {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Div contenedor con diseño distinguido */
+.tarjeta-inicio {
+    background: #120a1c; /* Negro con ligero matiz morado oscuro */
+    border: 2px solid #8a2be2; /* Borde morado radiante */
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    /* Sombra exterior resplandeciente en morado */
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.35),
+                inset 0 0 15px rgba(138, 43, 226, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.tarjeta-inicio h1 {
+    font-family: 'Dancing Script', cursive; /* Aplica la fuente elegante */
+    font-size: clamp(2.5rem, 6vw, 3.8rem);  /* Un poco más grande para destacar */
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+}
+
+/* Botón Morado interactivo */
+.btn-morado {
+    display: inline-block;
+    background-color: #8a2be2;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease;
+    animation: wave 1.2s infinite;
+    font-family: 'Dancing Script', cursive; /* Aplica la fuente elegante */
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+    }
+    50% {
+        transform: scale(1.05); /* Crece ligeramente */
+        box-shadow: 0 0 25px rgba(155, 66, 245, 0.9); /* Aumenta el resplandor */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+    }
+}
+
+.btn-morado:hover {
+    background-color: #9b42f5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(155, 66, 245, 0.7);
+}
+
+.btn-morado:active {
+    transform: translateY(0);
+}

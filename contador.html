@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Tiempo Juntos</title>
+    <!-- Tipografía manuscrita para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mainContador.css">
+</head>
+<body class="pagina-contador">
+    <div class="contenedor-contador">
+        <div id="si" class="tarjeta-contador">
+            <h1>Sabía que querrías, Mi flaca</h1>
+            <p class="subtitulo-tiempo">Llevamos juntos:</p>
+            
+            <div id="contador">
+                <div class="caja-tiempo">
+                    <span id="dias">0</span>
+                    <p>Días</p>
+                </div>
+                <div class="caja-tiempo">
+                    <span id="horas">0</span>
+                    <p>Horas</p>
+                </div>
+                <div class="caja-tiempo">
+                    <span id="minutos">0</span>
+                    <p>Min</p>
+                </div>
+                <div class="caja-tiempo">
+                    <span id="segundos">0</span>
+                    <p>Seg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener la fecha en que aceptó la propuesta desde LocalStorage
+        var fechaGuardada = localStorage.getItem('fechaAceptacion');
+
+        // Si no existe la fecha (entró directo sin aceptar), redirigir al inicio
+        if (!fechaGuardada) {
+            window.location.href = "index.html";
+        }
+
+        function actualizarContador() {
+            var ahora = new Date().getTime();
+            var diferencia = ahora - parseInt(fechaGuardada);
+
+            var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias;
+            document.getElementById("horas").innerText = horas;
+            document.getElementById("minutos").innerText = minutos;
+            document.getElementById("segundos").innerText = segundos;
+        }
+
+        actualizarContador();
+        setInterval(actualizarContador, 1000);
+    </script>
+</body>
+</html>
